@@ -1,0 +1,18 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+$typekit-text: 'futura-pt', serif;
+$typekit: 'futura-pt', sans-serif;
+$typekit-hand: 'permanent-marker', sans-serif;
+
+$grey: #30353d;
+
+@charset "utf-8";
+
+@import "core",
+		"blog",
+		"default",
+		"homepage",
+		"mixins",
+		"shdm";

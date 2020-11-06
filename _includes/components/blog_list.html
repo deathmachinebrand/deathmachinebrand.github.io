@@ -1,0 +1,28 @@
+{% assign blogs = site.posts %}
+
+<div class="blog-cpt list">
+	<div class="mdl-grid">
+	{% for items in blogs %}
+
+	{% assign index = forloop.index | modulo: 4 %}
+		<div class="mdl-cell mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-cell--4-col-desktop">
+				<div class="mdl-card mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+					<div class="blog-card-wide mdl-card mdl-shadow--2dp"
+					     onclick="javascript:window.location.href='{{items.url}}'">
+						<div class="mdl-card__title"
+						     style="background-image: url({{ items.img }});">
+							<img class="floating-logo"
+							     border="0" src="/img/logo.png">
+						</div>
+						<div class="mdl-card__supporting-text">
+							<a class="mdl-card__title-text" href="{{items.url}}">{{items.title}}</a>
+							<p>{{ items.content | strip_html | truncatewords: 9}}</p>
+							<br/>
+							<div class="date">Origin: {{ items.date | date:"%-m.%d.%Y" }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	{% endfor %}
+	</div>
+</div>
