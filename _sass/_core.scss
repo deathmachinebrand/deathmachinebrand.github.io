@@ -1,0 +1,90 @@
+@import 'mixins';
+
+
+body {
+	color: #5C6672;
+	margin: 0;
+	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $typekit;
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 1em;
+	margin: 5px 0;
+}
+
+a {
+	color: #5C6672;
+	font-family: $typekit;
+}
+
+p, div {
+	font-weight: 400;
+	line-height: 1.7em;
+}
+
+img {
+	width: 100%;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.author, .date {
+	display: block;
+}
+
+.mdl-navigation {
+	a.mdl-navigation__link {
+		@include trans-ease(.5s);
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #5C6672 !important;
+
+		&:hover, &:active {
+			color: #fff !important;
+		}
+	}
+
+	a:hover {
+		color: #fff !important;
+	}
+}
+
+.mdl-layout-title.pointer h4 {
+	color: #5C6672;
+}
+
+.mdl-navigation__link {
+	font-size: 25px;
+	color: #3A435E;
+}
+
+.page-buffer {
+	padding-left: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.md-layout__drawer, .mdl-layout__drawer-button {
+	@media screen and (min-width: 992px) {
+		display: none;
+	}
+}

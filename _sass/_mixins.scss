@@ -1,0 +1,58 @@
+@mixin rotate($deg){
+    -ms-transform: rotate($deg); /* IE 9 */
+    -webkit-transform: rotate($deg); /* Chrome, Safari, Opera */
+    transform: rotate($deg);
+}
+
+// TRANSITIONS
+@mixin trans-delay($delay) {
+    -webkit-transition: all .3s ease-in $delay;
+    -moz-transition: all .3s ease-in $delay;
+    -o-transition: all .3s ease-in $delay;
+    transition: all .3s ease-in $delay;
+}
+
+@mixin trans-ease($time) {
+    -webkit-transition: all $time ease;
+    -moz-transition: all $time ease;
+    -o-transition: all $time ease;
+    transition: all $time ease;
+}
+
+@mixin ani-ease($time) {
+    -webkit-animation: all $time ease;
+    -moz-animation: all $time ease;
+    -o-animation: all $time ease;
+    animation: all $time ease;
+}
+
+@mixin opacity($level){
+    filter: alpha(opacity=$level*100);
+    -moz-opacity: $level;
+    -khtml-opacity: $level;
+    opacity: $level;
+}
+
+@function stroke($stroke, $color) {
+    $shadow: ();
+    $from: $stroke*-1;
+    @for $i from $from through $stroke {
+        @for $j from $from through $stroke {
+            $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+        }
+    }
+    @return $shadow;
+}
+
+@mixin poly($coords) {
+    -webkit-clip-path: polygon($coords);
+    clip-path: polygon($coords);
+}
+
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {Style}           - text-shadow
+@mixin stroke($stroke, $color) {
+    text-shadow: stroke($stroke, $color);
+}

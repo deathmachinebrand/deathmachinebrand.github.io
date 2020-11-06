@@ -1,0 +1,242 @@
+
+
+body {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-blend-mode: multiply;
+    @include trans-ease(.5s);
+
+	&.v0 {
+		background-image:
+						url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+						url('/img/frontier_macsj0717.jpg'),
+						url('/img/yeti.jpg');
+		background-color: transparent;
+	}
+	&.v1 {
+		background-image:
+						url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+						url('/img/yeti.jpg');
+		background-color: greenyellow;
+	}
+	&.v2 {
+		background-image:
+						url('/img/frontier_macsj0717.jpg'),
+						url('/img/yeti.jpg');
+		background-color: dodgerblue;
+	}
+	&.v3 {
+		background-image:url('/img/FLAIR-375.jpg'),
+						url('/img/frontier_macsj0717.jpg');
+		background-color: purple;
+		background-blend-mode: overlay;
+
+		.home-text-big {
+			h2, h5 {
+				color: rgba(255,255,255,.7) !important;
+			}
+		}
+	}
+
+	.view-height {
+		height: 100vh;
+	}
+}
+
+
+.mdl-layout__content {
+	.page-content {
+		padding: 0;
+
+		.mdl-grid {
+			padding: 0 !important;
+			.mdl-cell {
+				margin: 0 !important;
+			}
+		}
+
+		p {
+			font-family: $typekit-hand;
+			color: rgba(255,255,255,.7);
+		}
+	}
+}
+
+.home-page-ctr {
+	min-height: 90vh;
+
+
+
+	.mdl-grid {
+
+		&.section {
+			padding: 0 !important; //material override
+		}
+		.poly {
+			clip-path: polygon(0 0, 0 0, 46% 95%, 39% 0);
+			background-color: rgba(244, 247, 118,.2);
+			z-index: 1;
+			left: 0;
+			right: 0;
+			height: 100vh;
+			width: 100vw;
+			position: absolute;
+			top: 0;
+
+			&.dark {
+				background-color: rgba(0,0,0, .5);
+			}
+		}
+
+
+		.home-text {
+			display: flex;
+			align-content: center !important;
+			align-items: center;
+			justify-content: center;
+
+			.center-content {
+				position:relative;
+				z-index: 2;
+				width: 100%;
+				height: initial;
+
+				@media(min-width: 768px) {
+					width: 100%;
+				}
+
+				@media(min-width: 992px) {
+					width: 80%;
+				}
+
+				@media(min-width: 1200px) {
+					width: 80%;
+				}
+
+				p {
+					padding: 0 20px;
+				}
+			}
+
+			.home-text-big {
+				position:relative;
+				z-index: 2;
+				width: 70%;
+				height: initial;
+				
+				&.top {
+					height: 90%;
+					width: 90%;
+					margin-top: 25%;
+				}
+
+				&.center {
+					text-align:center;
+				}
+
+				&.right {
+					text-align: right;
+				}
+
+				&.left {
+					text-align: left;
+				}
+				h1, h2, h3, h4, h5, h6 {
+					color: rgba(0,0,0,.8);
+				}
+
+				.purple-stroke {
+					@include stroke(1, purple);
+				}
+
+				h1 {
+					font-size: 33px;
+
+					@media(min-width: 768px) {
+						font-size: 40px;
+					}
+
+					@media(min-width: 992px) {
+						font-size: 50px;
+					}
+
+					@media(min-width: 1200px) {
+						font-size: 65px;
+					}
+				}
+			}
+		}
+
+		.mdl-cell {
+			margin: 0;
+		}
+	}
+}
+
+.mdl-card {
+	background-color: transparent;
+}
+
+
+.tri {
+	&.bottom {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 69.3px 40px 0 40px;
+		border-color: #007bff transparent transparent transparent;
+	}
+
+	&.top {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 40px 69.3px 40px;
+		border-color: transparent transparent #007bff transparent;
+
+	}
+}
+
+.tri-link {
+	animation-name: tri-blink;
+	animation-duration: 15s;
+	cursor: pointer;
+	display: inline-block;
+	background-color: purple;
+	width: 30px;
+	height: 30px;
+	clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+	animation-iteration-count: infinite;
+
+	&:hover {
+		background-color: dodgerblue;
+	}
+
+	&.up {
+		animation-delay: -2s;
+		clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	}
+}
+
+@keyframes tri-blink {
+	0%   {
+		background-color: purple;
+	}
+	25%  {
+		background-color: dodgerblue;
+		@include opacity(.5);
+	}
+	50%  {
+		background-color: purple;
+		@include opacity(.8);
+	}
+	75% {
+		background-color: dodgerblue;
+		@include opacity(1);
+	}
+	100%  {
+		background-color: purple;
+		@include opacity(1);
+	}
+}

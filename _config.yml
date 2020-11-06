@@ -1,0 +1,37 @@
+
+# Site settings
+name: Super Happytime Death Machine
+title: Super Happytime Death Machine brand
+email: dave@superhappytimedeathmachine.com
+description: Super Happytime Death Machine develop products for snowboarding, including snowboards, softgoods for lifestyle, and much more.
+
+source: ./
+destination: ./dist
+
+#timezone: America/New_York
+baseurl: "" 
+url: "https://deathmachinebrand.com" # the base hostname & protocol for your site
+
+twitter_username: shdmsnowboards
+github_username:  deathmachinesnow
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+sass:
+    sass_dir: ./_sass
+
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+defaults:
+  -
+    scope:
+      path: _posts
+    values:
+      layout: article

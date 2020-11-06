@@ -1,0 +1,69 @@
+
+
+body.shdm {
+	animation: body-switch;
+	-webkit-animation-duration: 15s;
+	-moz-animation-duration:15s;
+	-o-animation-duration: 15s;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-blend-mode: multiply;
+
+	@include trans-ease(.5s);
+	background-image:
+		url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+		url('/img/frontier_macsj0717.jpg');
+	background-color: rgba(	30, 144, 255,.2);
+}
+
+@keyframes body-switch {
+	0%   {
+		background-image:
+			url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+			url('/img/frontier_macsj0717.jpg');
+		background-color: purple;
+	}
+	25%  {
+		background-image:
+			url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+			url('/img/frontier_macsj0717.jpg'),
+			url('/img/shdm/shdm_1.png');
+		background-color: purple;
+	}
+	50%  {
+		background-image:
+			url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+			url('/img/frontier_macsj0717.jpg'),
+			url('/img/shdm/shdm_3.png');
+		background-color: purple;
+		background-blend-mode: overlay;
+
+	}
+	75% {
+		background-image:
+			url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+			url('/img/frontier_macsj0717.jpg'),
+			url('/img/shdm/shdm_2.png'),
+			url('/img/shdm/shdm_4.png');
+		background-color: rgba(	30, 144, 255,1);
+		background-blend-mode: overlay;
+	}
+	90%  {
+		background-image:
+			url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+			url('/img/frontier_macsj0717.jpg'),
+			url('/img/shdm/shdm_1.png'),
+			url('/img/shdm/shdm_4.png');
+		background-color: rgba(	30, 144, 255,.6);
+	}
+
+	100% {
+		background-image:
+			url('/img/stsci-h-p1930a-f-3213x2836.jpg'),
+			url('/img/frontier_macsj0717.jpg');
+		background-color: rgba(	30, 144, 255,0);
+	}
+}
