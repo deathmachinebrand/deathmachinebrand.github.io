@@ -1,4 +1,4 @@
-# deathmachinesnow.github.io
+# deathmachinebrand.github.io
 
 To run locally:
 `bundle exec jekyll serve`
